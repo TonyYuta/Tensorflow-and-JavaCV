@@ -16,8 +16,9 @@ public class Classificator {
 
     public Classificator() {
         try {
-            Path modelPath = Paths.get(this.getClass().getResource("trained_model/tensorflow_inception_graph.pb").toURI());
             Path labelsPath = Paths.get(Main.class.getResource("trained_model/imagenet_comp_graph_label_strings.txt").toURI());
+            Path modelPath = Paths.get(this.getClass().getResource("trained_model/tensorflow_inception_graph.pb").toURI());
+
             byte[] graphData = Files.readAllBytes(modelPath);
             labels = Files.readAllLines(labelsPath);
 
